@@ -1,65 +1,46 @@
-# Prediksi Kepuasan Pelanggan E-Commerce
+Proyek ini bertujuan untuk membangun model klasifikasi machine learning yang mampu memprediksi tingkat kepuasan pelanggan (Low, Medium, High) berdasarkan data karakteristik dan interaksi pelanggan.
 
-Proyek ini bertujuan untuk memprediksi tingkat kepuasan pelanggan (Low, Medium, High) menggunakan teknik Machine Learning berbasis data interaksi dan karakteristik pelanggan.
+## 📁 Struktur Folder
 
-## 📁 Struktur Proyek
 
 ├── data/
-│   └── customer_feedback_satisfaction.csv
+│   └── customer\_feedback\_satisfaction.csv        # Dataset utama
 ├── notebooks/
-│   └── Uasss_Final_Edited_Final.ipynb
-├── README.md
+│   └── Uasss\_Final\_Edited\_Final.ipynb            # Notebook analisis dan pelatihan model
+├── models/
+│   └── \[Link model disediakan karena file besar] # File model tidak tersedia langsung
+├── README.md                                      
 
-## 📊 Dataset
-Sumber: Dataset e-commerce berisi lebih dari 38.000 data pelanggan
-Fitur:
+## 🔍 Dataset
+Dataset berisi sekitar 38.000 entri pelanggan, dengan fitur seperti:
+- Karakteristik: `Gender`, `Country`, `Age`, `Income`
+- Interaksi: `ProductQuality`, `ServiceQuality`, `LoyaltyLevel`, `FeedbackScore`
+- Target: `SatisfactionLevel` (Low, Medium, High)
 
-  * Demografi: `Gender`, `Country`, `Age`, `Income`
-  * Interaksi: `ProductQuality`, `ServiceQuality`, `FeedbackScore`, `LoyaltyLevel`
-  * Target asli: `SatisfactionScore` (0–100)
-  * Target klasifikasi: `SatisfactionLevel` (Low, Medium, High)
+## 🧠 Model Machine Learning
+Model yang dibangun dan diuji:
+- Logistic Regression
+- SVM (Support Vector Machine)
+- Random Forest (dengan GridSearchCV)
 
-## 🧪 Model yang Digunakan
-* Logistic Regression
-* Support Vector Machine (SVM)
-* Random Forest (dengan GridSearchCV untuk hyperparameter tuning)
+Penanganan data tidak seimbang dilakukan dengan **SMOTE**.
 
-## ⚙️ Preprocessing
-* Handling missing & duplicate data
-* Encoding data kategorikal dengan `LabelEncoder`
-* Normalisasi fitur numerik dengan `StandardScaler`
-* Menggunakan `SMOTE` untuk mengatasi ketidakseimbangan kelas target
+Model terbaik adalah **Random Forest**, yang disimpan dalam format `.joblib`.
 
+## 📦 Download Model Terlatih
+Karena ukuran file >100MB, model tidak diunggah langsung ke GitHub.
 
-## 📈 Hasil Evaluasi
-* Model terbaik: **Random Forest** dengan hasil evaluasi terbaik berdasarkan akurasi dan F1-score
-* Visualisasi meliputi:
-  * Distribusi `SatisfactionScore`
-  * Heatmap korelasi fitur
-  * Classification report
+Silakan unduh melalui Google Drive:
 
-## 📌 Tools
-* Python 3.10+
-* Scikit-learn
-* Imbalanced-learn (SMOTE)
-* Pandas, Numpy, Matplotlib, Seaborn
+🔗 [Download best_model_rf.joblib via Google Drive](https://drive.google.com/drive/folders/130BKcPl9IyGHe9Pe4-uulyopmfWjjFeR?usp=sharing)
 
+## 📊 Visualisasi
+Visualisasi disertakan dalam notebook, seperti:
+- Histogram distribusi skor kepuasan
+- Heatmap korelasi antar fitur
+- Grafik evaluasi model
 
-## 👤 Anggota Proyek
-* Barokah Sa’adah – EDA (Data collection dan exploratory data analysis), Preprocessing, Model Logistic Regression
-* Dwika Oca Ramadhanti – EDA (Data collection dan exploratory data analysis), Preprocessing, Model Random Forest
-* Tira Julia Indah Sari – EDA (Data collection dan exploratory data analysis), Preprocessing, Model SVM
-* Eka Diana Forensia – Evaluasi Model, Visualisasi ROC, Simpan Model Terbaik dan Penulisan Dokumen
+## ✅ Hasil Akhir
+Model Random Forest memberikan akurasi dan F1-score terbaik setelah tuning parameter dan penanganan ketidakseimbangan data.
 
 
-## 🚀 Cara Menjalankan
-1. Clone repositori ini
-bash
-git clone https://github.com/NAMA-KAMU/ml-kepuasan-pelanggan.git
-cd ml-kepuasan-pelanggan
-2. Jalankan notebook:
-bash
-jupyter notebook notebooks/Uasss_Final_Edited_Final.ipynb
-
-## 📄 Lisensi
-Proyek ini disusun untuk memenuhi tugas UAS Machine Learning dan hanya untuk tujuan pembelajaran.
